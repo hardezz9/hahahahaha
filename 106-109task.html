@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript тапсырмалары 106–109</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            margin: 0;
+            padding: 20px;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            color: #154360;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #2874a6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 4px;
+        }
+
+        button:hover {
+            background: #1a5276;
+        }
+
+        .task {
+            display: none;
+            background: white;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .task.active {
+            display: block;
+        }
+
+        input, select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        #clock {
+            font-size: 48px;
+            text-align: center;
+            color: #154360;
+            font-weight: bold;
+        }
+
+        #date {
+            text-align: center;
+        }
+
+        .result {
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .winner {
+            background: #d5f5e3;
+            font-weight: bold;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript тапсырмалары № 106–109</h1>
+
+    <nav>
+        <button data-task="task106">№ 106 Калькулятор</button>
+        <button data-task="task107">№ 107 Сағат</button>
+        <button data-task="task108">№ 108 Ойын</button>
+        <button data-task="task109">№ 109 Дауыс беру</button>
+    </nav>
+
+    <!-- № 106 -->
+    <section id="task106" class="task active">
+        <h2>№ 106. Жеңілдік калькуляторы</h2>
+
+        <label for="price">Тауар бағасы (₸):</label>
+        <input type="number" id="price" min="0" step="any"
+               placeholder="Мысалы: 10000">
+
+        <label for="discount">Жеңілдік пайызы:</label>
+        <input type="number" id="discount" min="0" max="100"
+               step="any" placeholder="Мысалы: 15">
+
+        <button id="calculate">Есептеу</button>
+        <button id="clear">Тазалау</button>
+
+        <p id="calcResult" class="result"></p>
+    </section>
+
+    <!-- № 107 -->
+    <section id="task107" class="task">
+        <h2>№ 107. Цифрлық сағат</h2>
+        <div id="clock">00:00:00</div>
+        <p id="date"></p>
+    </section>
+
+    <!-- № 108 -->
+    <section id="task108" class="task">
+        <h2>№ 108. Санды тап</h2>
+        <p>Компьютер 1 мен 100 аралығында сан жасырды.</p>
+
+        <label for="guess">Өз жауабың:</label>
+        <input type="number" id="guess" min="1" max="100"
+               step="1" placeholder="1–100 аралығындағы сан">
+
+        <button id="checkGuess">Тексеру</button>
+        <button id="newGame">Жаңа ойын</button>
+
+        <p id="gameResult" class="result">Сәттілік!</p>
+        <p>Әрекеттер саны: <span id="attempts">0</span></p>
+    </section>
+
+    <!-- № 109 -->
+    <section id="task109" class="task">
+        <h2>№ 109. Дауыс беру</h2>
+        <p>Қай бағдарламалау тілі саған ұнайды?</p>
+
+        <form id="voteForm">
+            <label>
+                <input type="radio" name="language" value="JavaScript" required>
+                JavaScript
+            </label>
+            <label>
+                <input type="radio" name="language" value="Python">
+                Python
+            </label>
+            <label>
+                <input type="radio" name="language" value="Java">
+                Java
+            </label>
+            <label>
+                <input type="radio" name="language" value="C++">
+                C++
+            </label>
+
+            <button type="submit">Дауыс беру</button>
+            <button type="button" id="resetVotes">Дауыстарды тазалау</button>
+        </form>
+
+        <p id="voteMessage" class="result"></p>
+        <h3>Дауыс нәтижелері</h3>
+        <ul id="voteResults"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
